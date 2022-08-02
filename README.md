@@ -1,6 +1,6 @@
 # Fairness through discussion: A deliberative way forward
 
-The main deliverable of this submission is the (NGO Algorithm Audit Report)[https://github.com/NGO-Algorithm-Audit/AI_Audit_Challenge/blob/master/report/Report_AI_Audit_Challenge.docx]
+The main deliverable of this submission is the [NGO Algorithm Audit Report](https://github.com/NGO-Algorithm-Audit/AI_Audit_Challenge/blob/master/report/Report_AI_Audit_Challenge.docx)
 
 Structure of this repository.
 

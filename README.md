@@ -1,6 +1,6 @@
 # Fairness through discussion: A deliberative way forward
 
-The main deliverable of this submission is the AI Auditing Report: [link]
+The main deliverable of this submission is the (NGO Algorithm Audit Report)[https://github.com/NGO-Algorithm-Audit/AI_Audit_Challenge/blob/master/report/Report_AI_Audit_Challenge.docx]
 
 Structure of this repository.
 
@@ -10,10 +10,9 @@ Structure of this repository.
     ├── data                    # Data sets
     ├── images                  # Images used in notebook and report
     ├── literature              # Reference materials
-    ├── mdss                    # AIF360 bias scan method
     ├── report                  # Main document
-    ├── src                     # Source files for scripts (e.g., helper functions)
-    ├── .gitignore              # files to be ignored in this repo
+    ├── .gitattributes          # To store large files
+    ├── .gitignore              # Files to be ignored in this repo
     ├── LICENSE                 # MIT license for sharing 
     ├── README.md               # Read me file
     └── requirements.txt        # Requirements for reproduce coding examples

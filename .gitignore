@@ -1,0 +1,5 @@
+*.ipynb_checkpoints
+*.DS_Store
+*__pycache__
+*~$port_AI_Audit_Challenge.docx
+*~$ecutive_summary.docx

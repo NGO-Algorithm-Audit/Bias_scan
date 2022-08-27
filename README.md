@@ -6,8 +6,9 @@ Structure of this repository.
 
 ```
     .
-    ├── bias_scan_tool          # Bias scan code 
+    ├── bias_scan_tool          # Bias scan tool 
     ├── data                    # Twitter and credit data sets
+    ├── classification_models   # Classifiers
     ├── literature              # Reference materials
     ├── report                  # Main document
     ├── .gitattributes          # To store large files

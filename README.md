@@ -6,7 +6,7 @@ Structure of this repository.
 
 ```
     .
-    ├── bias_scan_notebooks     # Quantitative bias scan methods 
+    ├── bias_scan_tool          # Bias scan code 
     ├── data                    # Data sets
     ├── literature              # Reference materials
     ├── report                  # Main document

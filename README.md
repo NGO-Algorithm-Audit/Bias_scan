@@ -7,7 +7,7 @@ Structure of this repository.
 ```
     .
     ├── bias_scan_tool          # Bias scan code 
-    ├── data                    # Data sets
+    ├── data                    # Twitter and credit data sets
     ├── literature              # Reference materials
     ├── report                  # Main document
     ├── .gitattributes          # To store large files

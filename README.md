@@ -8,18 +8,17 @@ Structure of this repository.
     .
     ├── bias_scan_notebooks     # Quantitative bias scan methods 
     ├── data                    # Data sets
-    ├── images                  # Images used in notebook and report
     ├── literature              # Reference materials
     ├── report                  # Main document
     ├── .gitattributes          # To store large files
     ├── .gitignore              # Files to be ignored in this repo
     ├── LICENSE                 # MIT license for sharing 
     ├── README.md               # Read me file
+
     └── requirements.txt        # Requirements for reproduce coding examples
 ```
-
 ## Summary
-Discrimination is context-dependent [...]. Applying non-discrimination requirements in practice, one runs into difficulties: Under what circumstances proxy-variables for protected characteristics, such as ethnicity, can justifiably be used? Which metrics can be used for measuring the fairness of an algorithm? And: How we can arrive at well-founded quantitative thresholds? There is hence a gap between the qualitative requirements of law and ethics, and the quantitative nature of AI. Algorithm Audit aims to bridge this gap by letting a commission of experts mediate between these aspects for a concrete case, taking into account its specific social, institutional and technical context.
+Fairness cannot be automated. As AI is omnipresent in digital society, there is an urgent need to review AI systems with respect to the qualitative requirements of law and ethics. To facilitate this endeavour, we propose a scalable, easy to use and open-source bias scan tool. This bias scan tool identifies potentially discriminated groups of similar users in AI systems (including proxy and intersectional discrimination) and requires no a priori information about existing disparities and sensitive attributes. As demonstrated on a BERT-based Twitter disinformation detection model, the bias scan tool identifies statistically significant disinformation classification bias on the basis of verified user profiles, the number of mentions and hashtags used in tweets. On a widely cited credit data set, statistically significant loan approval bias is observed on the basis of applicants’ job status, telephone registration and the amount of credit requested. These observations do not establish prima facie algorithmic discrimination. Rather, the identified disparities serve as a starting point to assess potential discrimination according to the context-sensitive legal doctrine, i.e., assessment of the legitimacy, proportionality, and indispensability of observed disparities. For this qualitative assessment, we propose an expert-led deliberative method to review identified quantitative disparities. In this manner, we bridge the gap between the statistical and legal reasoning paradigm to shed light into fair AI.
 
 ## Contributors
 - Jurriaan Parie, Trustworthy AI data scientist at IBM

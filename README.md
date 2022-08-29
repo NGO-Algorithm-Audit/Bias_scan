@@ -1,6 +1,6 @@
 # Fair AI through discussion: A deliberative way forward
 
-The main deliverable of this submission is: [bias scan tool report](https://github.com/NGO-Algorithm-Audit/AI_Audit_Challenge/blob/master/report/Report_AI_Audit_Challenge.docx).
+The main deliverable of this submission is: [bias scan tool report](https://github.com/NGO-Algorithm-Audit/AI_Audit_Challenge/blob/master/Bias_scan_tool_report.docx).
 
 ## Summary
 Fairness cannot be automated. As AI is omnipresent in digital society, there is an urgent need to review AI systems with respect to the qualitative requirements of law and ethics. To facilitate this time-consuming endeavour, we propose a scalable, easy to use, and open-source bias scan tool\* to identify potentially discriminated groups of similar users in AI systems. This bias scan tool does not require a priori information about existing disparities and sensitive attributes, and is therefore able to detect potential proxy discrimination, intersectional discrimination and new types of differentiation that evade non-discrimination law. 

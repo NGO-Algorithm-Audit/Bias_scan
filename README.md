@@ -1,4 +1,4 @@
-# Fair AI through discussion: A deliberative way forward
+# Fairness through discussion: A deliberative way forward
 
 The main deliverable of this submission is: [bias scan tool report](https://github.com/NGO-Algorithm-Audit/AI_Audit_Challenge/blob/master/Bias_scan_tool_report.docx).
 

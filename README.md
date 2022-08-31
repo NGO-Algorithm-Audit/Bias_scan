@@ -24,16 +24,17 @@ These observations do not establish prohibited prima facie algorithmic discrimin
 ### Structure of this repository
 ```
     .
-    ├── bias_scan_tool          # Bias scan tool 
-    ├── classification_models   # Classifiers
-    ├── data                    # Twitter and credit data sets
-    ├── images                  # Images
-    ├── literature              # Reference materials
-    ├── LICENSE                 # MIT license for sharing 
-    ├── report                  # Main deliverable
-    ├── README.md               # Read me file 
-    ├── .gitattributes          # To store large files
-    └── .gitignore              # Files to be ignored in this repo
+    ├── bias_scan_tool              # Bias scan tool 
+    ├── classification_models       # Classifiers
+    ├── data                        # Twitter and credit data sets
+    ├── images                      # Images
+    ├── literature                  # Reference materials
+    ├── .gitattributes              # To store large files
+    ├── .gitignore                  # Files to be ignored in this repo
+    ├── Bias_scan_tool_report.pdf   # Main deliverable
+    ├── LICENSE                     # MIT license for sharing 
+    └── README.md                   # Read me file 
+    
 ```
 
 
@@ -41,3 +42,4 @@ These observations do not establish prohibited prima facie algorithmic discrimin
 - Jurriaan Parie, Trustworthy AI data scientist at IBM
 - Ariën Voogt, PhD-candidate in Philosophy at Protestant Theological University of Amsterdam
 - dr. Vahid Niamadpour, PhD-candidate in Linguistics at Leiden University
+- ...

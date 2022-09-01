@@ -71,10 +71,9 @@ def pca_plot(data):
     temp_dataset.rename( columns={0 :'PCA - 1st'}, inplace=True )
     temp_dataset.rename( columns={1 :'PCA - 2nd'}, inplace=True )
 
-    scatterplot = sns.scatterplot(data=temp_dataset, x='PCA - 1st', y='PCA - 2nd', hue="clusters", size='errors', sizes=(150, 30), palette="tab10")
-    scatterplot.set_title('HBAC-KMeans')
+    scatterplot = sns.scatterplot(data=temp_dataset, x='PCA - 1st', y='PCA - 2nd', hue="clusters", size='errors', sizes=(150, 30), palette="Set1")
+    scatterplot.set_title('K-Means HBAC')
     scatterplot.legend(loc='center left', bbox_to_anchor=(1.0, 0.5), ncol=1)
-    # plt.savefig('plot_kmeans.png', dpi=300) # for saving a plot
     plt.show()
     
 def accuracy(results):

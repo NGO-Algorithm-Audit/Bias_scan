@@ -1,4 +1,5 @@
 import os
+import sys
 import pandas as pd
 from aif360.datasets import StandardDataset
 
@@ -62,7 +63,8 @@ class GermanDataset(StandardDataset):
             used for more descriptive visualizations.
         """
 
-        filepath = "./german.data"
+        # change path 
+        filepath = "../../data/GermanCredit_dataset//german.data"
 
         # as given by german.doc
         column_names = ['status', 'month', 'credit_history',

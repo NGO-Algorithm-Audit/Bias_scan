@@ -9,14 +9,14 @@ from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 
 def initialize_dataset(raw_data, features, with_errors=True, just_features=True, scale_features=True, with_classes=True):
-    """ Initialisation of the dataset. Scales all the features and can also scale the errors, which can be included or excluded for clustering 
+    """ Initializing dataset to scale features. Errors can also be scaled, which can be included or excluded for clustering. 
     It returns a scaled dataset with new columns "clusters" = 0 and "new_clusters" = -1, which are required for HBAC """
 
     new_data = raw_data.copy(deep=True)
 
     if with_errors:
-        scaling_factor = 0.8 #needs to be converted to scaling range [0.2 - 1.2]
-        new_data['scaled_errors'] = new_data['errors'] * 0.8 
+        scaling_factor = 1 #needs to be converted to scaling range [0.2 - 1.2]
+        new_data['scaled_errors'] = new_data['errors'] * scaling_factor
 
     if just_features:
         new_data = new_data.drop(['text','predicted_class', 'true_class', 'errors'], axis=1)
@@ -73,7 +73,7 @@ def pca_plot(data):
     temp_dataset.rename( columns={1 :'PCA - 2nd'}, inplace=True )
 
     scatterplot = sns.scatterplot(data=temp_dataset, x='PCA - 1st', y='PCA - 2nd', hue="clusters", size='errors', sizes=(150, 30), palette="Set1")
-    scatterplot.set_title('BERT Twitter disinformation classifier – HBAC bias scan (k-means)')
+    scatterplot.set_title('XGBoost loan approval classifier – HBAC bias scan (k-means)')
     scatterplot.legend(loc='center left', bbox_to_anchor=(1.0, 0.5), ncol=1)
     plt.show()
     

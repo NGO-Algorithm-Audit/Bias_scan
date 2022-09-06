@@ -73,7 +73,7 @@ def pca_plot(data):
     temp_dataset.rename( columns={1 :'PCA - 2nd'}, inplace=True )
 
     scatterplot = sns.scatterplot(data=temp_dataset, x='PCA - 1st', y='PCA - 2nd', hue="clusters", size='errors', sizes=(150, 30), palette="Set1")
-    scatterplot.set_title('HBAC bias scan using k-means clustering')
+    scatterplot.set_title('XGBoost loan approval classifier – HBAC bias scan (k-means)')
     scatterplot.legend(loc='center left', bbox_to_anchor=(1.0, 0.5), ncol=1)
     plt.show()
     

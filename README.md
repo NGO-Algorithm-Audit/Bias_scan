@@ -18,7 +18,7 @@ These observations do not establish prohibited *prima facie* discrimination. Rat
 
 \* <sub>The implemented bias scan tool is based on the k-means Hierarchical Bias-Aware Clustering (HBAC) method as described in Misztal-Radecka, Indurkya, *Information Processing and Management*. Bias-Aware Hierarchical Clustering for detecting the discriminated groups of users in recommendation systems (2021).</sub>
 
-## Summary
+## Solution
 ![image](./images/Quantitative_qualitatitive.png)
 
 ## Results
@@ -42,7 +42,7 @@ These observations do not establish prohibited *prima facie* discrimination. Rat
 ```
 
 
-## About this submission
+## This submission is endorsed by
 - Jurriaan Parie, Trustworthy AI data scientist at IBM
 - Ariën Voogt, PhD-candidate in Philosophy at Protestant Theological University of Amsterdam
 - dr. Vahid Niamadpour, PhD-candidate in Linguistics at Leiden University

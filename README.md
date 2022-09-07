@@ -1,6 +1,6 @@
 # Fairness through discussion: A deliberative way forward
 
-The main deliverable of this submission is: [bias scan tool report](https://github.com/NGO-Algorithm-Audit/AI_Audit_Challenge/blob/master/Bias_scan_tool_report.docx).
+The main deliverable of this submission is the [bias scan tool report](https://github.com/NGO-Algorithm-Audit/AI_Audit_Challenge/blob/master/Bias_scan_tool_report.docx).
 
 ## Results
 
@@ -18,7 +18,7 @@ These observations do not establish prohibited *prima facie* discrimination. Rat
 
 \* <sub>The implemented bias scan tool is based on the k-means Hierarchical Bias-Aware Clustering (HBAC) method as described in Misztal-Radecka, Indurkya, *Information Processing and Management*. Bias-Aware Hierarchical Clustering for detecting the discriminated groups of users in recommendation systems (2021).</sub>
 
-
+![image](./images/Quantitative_qualitatitive.png)
 ![image](./images/Bias_scan_BERT_disinfo_classifier.png)
 ![image](./images/Bias_scan_XGBoost_loan_approval_classifier.png)
 

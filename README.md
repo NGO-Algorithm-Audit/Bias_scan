@@ -1,6 +1,6 @@
 # Fairness through discussion: A deliberative way forward
 
-☁️ Implementation as AWS web application available on: https://www.algorithmaudit.eu/bias_scan/. 
+☁️ Implemented as an AWS web application, available on: https://www.algorithmaudit.eu/bias_scan/. 
 
 📄 Details on legal background, statistical methods and use cases: [bias scan tool report](https://github.com/NGO-Algorithm-Audit/AI_Audit_Challenge/blob/master/Bias_scan_tool_report.docx).
 

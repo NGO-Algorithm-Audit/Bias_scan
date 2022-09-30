@@ -40,8 +40,8 @@ def initialize_GermanCredit_dataset(raw_data, features, with_errors=True, just_f
     new_data = raw_data.copy(deep=True)
 
     if with_errors:
-        scaling_factor = 0.8 #needs to be converted to scaling range [0.2 - 1.2]
-        new_data['scaled_errors'] = new_data['errors'] * 0.8 
+        scaling_factor = 1 #needs to be converted to scaling range [0.2 - 1.2]
+        new_data['scaled_errors'] = new_data['errors'] * scaling_factor
 
     if just_features:
         new_data = new_data.drop(['predicted_class', 'true_class', 'errors'], axis=1)
@@ -73,9 +73,10 @@ def pca_plot(data):
     temp_dataset.rename( columns={1 :'PCA - 2nd'}, inplace=True )
 
     scatterplot = sns.scatterplot(data=temp_dataset, x='PCA - 1st', y='PCA - 2nd', hue="clusters", size='errors', sizes=(150, 30), palette="Set1")
-    scatterplot.set_title('XGBoost loan approval classifier – HBAC bias scan (k-means)')
-    scatterplot.legend(loc='center left', bbox_to_anchor=(1.0, 0.5), ncol=1)
+    scatterplot.set_title('HBAC bias scan (k-means) on AI classifier')
+    lgd = scatterplot.legend(loc='center left', bbox_to_anchor=(1.0, 0.5), ncol=1)
     plt.show()
+#     plt.savefig('./test.png', bbox_extra_artists=(lgd,), bbox_inches='tight')
     
 def accuracy(results):
     ''' This function calculates the accuracy of a DF dataframe

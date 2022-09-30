@@ -8,6 +8,7 @@
 
 - No data needed on protected attributes of users (unsupervised bias detection); 
 - Model-agnostic (binary AI classifiers); 
+- Quantitative and qualitative approach to assess fair AI;
 - Developed open-source and not-for-profit.
 
 ## Executive summary

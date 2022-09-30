@@ -4,7 +4,7 @@
 
 📄 Details on legal background, statistical methods and use cases: [bias scan tool report](https://github.com/NGO-Algorithm-Audit/AI_Audit_Challenge/blob/master/Bias_scan_tool_report.docx).
 
-## Key take aways
+## Why this bias scan?
 
 - No data needed on protected attributes of users (unsupervised bias detection); 
 - Model-agnostic (binary AI classifiers); 

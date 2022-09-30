@@ -1,8 +1,8 @@
 # Fairness through discussion: A deliberative way forward
 
-Implemented as a web application on our website: https://www.algorithmaudit.eu/bias_scan/. 
+☁️ Implemented as an AWS web application on: https://www.algorithmaudit.eu/bias_scan/. 
 
-Details on use cases can be found in the [bias scan tool report](https://github.com/NGO-Algorithm-Audit/AI_Audit_Challenge/blob/master/Bias_scan_tool_report.docx).
+📄 Details on legal background, statistical methods and use cases can be found in the [bias scan tool report](https://github.com/NGO-Algorithm-Audit/AI_Audit_Challenge/blob/master/Bias_scan_tool_report.docx).
 
 ## Key take aways
 
@@ -10,7 +10,7 @@ Details on use cases can be found in the [bias scan tool report](https://github.
 - Model-agnostic (binary AI classifiers); 
 - Developed open-source and not-for-profit.
 
-## Summary
+## Executive summary
 Artificial intelligence (AI) is increasingly used to automate or support policy decisions that affects individuals. It is imperative that AI adheres to the legal and ethical requirements on such policy decisions. In particular, policy decisions should not be systematically discriminatory (direct or indirect) with respect to protected attributes such as gender, sex, or race.
 
 To achieve this, we propose a scalable, model-agnostic, and open-source bias scan tool to identify potentially discriminated groups of similar users in AI systems. This bias scan tool does not require *a priori* information about existing disparities and sensitive attributes, and is therefore able to detect possible proxy discrimination, intersectional discrimination and other types of differentiation that evade non-discrimination law. The tool is implemented on the [website](https://www.algorithmaudit.eu/bias_scan/) of NGO Algorithm Audit, such that it can be used by a wide public.

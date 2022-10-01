@@ -40,6 +40,7 @@ A .csv file of max. 10mb, with columns structured as follows: features, predicte
 
 ## Output – Cluster differences
 ![image](./images/Bias_scan_BERT_disinfo_classifier.png)
+
 Differences between cluster with most negative bias and rest of dataset, including p-values of Welch's statistical test. More details can be found [here](https://github.com/NGO-Algorithm-Audit/Bias_scan/blob/master/HBAC_scan/HBAC_BERT_disinformation_classifier.ipynb). 
 | feature         | difference | p-value |
 |-----------------|------------|---------|

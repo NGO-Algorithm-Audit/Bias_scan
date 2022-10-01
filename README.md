@@ -52,7 +52,7 @@ Statistical significant feature differences between cluster with most negative b
 | #URLs           | -0.74848   | 0.00015 |
 
 #### Conclusion
-Tweets of users with a verified profile, below average number of mentions and URLs, and above average sentiment score are classified significantly more often as disinformation by the BERT-based classifier. Next, with the help of subject matter experts a qualitative assessment is needed to examine the measured quantitative further.
+Tweets of users with a verified profile, below average number of mentions and URLs, and above average sentiment score are classified significantly more often as disinformation by the BERT-based classifier. Next, with the help of subject matter experts a qualitative assessment is needed to examine the measured quantitative disparities further.
 
 ### Case study 2 – XGBoost loan  approval classifier (German Credit data set)
 
@@ -69,7 +69,7 @@ Statistical significant feature differences between cluster with most negative b
 | unknown/no property | -0.42471   | 0.00000 |
 
 #### Conclusion
-This means that loan applicants without real estate or unknown/no property, negative balance, unskilled job status, or those who want to use a loan to buy a new car or radio/television are significantly less often approved by the XGBoost classifier. Next, with the help of subject matter experts a qualitative assessment is needed to examine the measured quantitative further.
+This means that loan applicants without real estate or unknown/no property, negative balance, unskilled job status, or those who want to use a loan to buy a new car or radio/television are significantly less often approved by the XGBoost classifier. Next, with the help of subject matter experts a qualitative assessment is needed to examine the measured quantitative disparities further.
 
 ### Structure of this repository
 ```

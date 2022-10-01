@@ -41,7 +41,7 @@ A .csv file of max. 10mb, with columns structured as follows: features, predicte
 ## Output – Cluster differences
 ![image](./images/Bias_scan_BERT_disinfo_classifier.png)
 
-Differences between cluster with most negative bias (cluster 5) and rest of dataset, including p-values of Welch's statistical test. More details can be found [here](https://github.com/NGO-Algorithm-Audit/Bias_scan/blob/master/HBAC_scan/HBAC_BERT_disinformation_classifier.ipynb). 
+Statistical significant feature differences between cluster with most negative bias (cluster 5) and rest of dataset. More details can be found [here](https://github.com/NGO-Algorithm-Audit/Bias_scan/blob/master/HBAC_scan/HBAC_BERT_disinformation_classifier.ipynb). 
 | feature         | difference | p-value |
 |-----------------|------------|---------|
 | verified        | 0.53144    | 0.00000 |
@@ -49,7 +49,8 @@ Differences between cluster with most negative bias (cluster 5) and rest of data
 | sentiment_score | 0.99642    | 0.00008 |
 | #URLs           | -0.74848   | 0.00015 |
 
-Tweets of users with a verified profile, below average number of mentions and URLs, and above average sentiment score are classified significantly more often as disinformation by the BERT-based classifier.
+#### Conclusion
+Tweets of users with a verified profile, below average number of mentions and URLs, and above average sentiment score are classified significantly more often as disinformation by the BERT-based classifier. Next, with help of subject matter experts the identified quantitative disparities need to be reviewed to assess potential discriminatory bias of the classifier.
 
 ![image](./images/Bias_scan_XGBoost_loan_approval_classifier.png)
 

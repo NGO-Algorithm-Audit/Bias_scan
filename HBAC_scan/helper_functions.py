@@ -156,7 +156,6 @@ def get_next_cluster(data):
         if variance_cluster > highest_variance:
             highest_variance = variance_cluster
             cluster_number = i
-            print('--> Cluster with the highest variance:', cluster_number)
 
     return cluster_number
 

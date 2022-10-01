@@ -58,9 +58,8 @@ A .csv file of max. 10mb, with columns structured as follows: features, predicte
     
 ```
 
-
-## This submission is endorsed by
-- Jurriaan Parie, Trustworthy AI data scientist at IBM
-- Ariën Voogt, PhD-candidate in Philosophy at Protestant Theological University of Amsterdam
-- dr. Vahid Niamadpour, PhD-candidate in Linguistics at Leiden University
-- ...
+## Contributors to this project
+- Jurriaan Parie, Trustworthy AI data scientist at IBM;
+- Ariën Voogt, PhD-candidate in Philosophy at Protestant Theological University of Amsterdam;
+- Joel Persson, PhD-candidate in Applied Data Science at ETH Zürich;
+- dr. Vahid Niamadpour, PhD-candidate in Linguistics at Leiden University.

@@ -43,12 +43,13 @@ A .csv file of max. 10mb, with columns structured as follows: features, predicte
 ### Case study 1 – BERT-based disinformation classifier (Twitter data set)
 ![image](./images/Bias_scan_BERT_disinfo_classifier.png)
 
-Statistical significant feature differences between cluster with most negative bias (cluster 4, bias=-0.27) and rest of dataset. More details can be found [here](https://github.com/NGO-Algorithm-Audit/Bias_scan/blob/master/HBAC_scan/HBAC_BERT_disinformation_classifier.ipynb). 
+Statistical significant differences in features between cluster with most negative bias (cluster 4, bias=-0.27) and rest of dataset:
 | feature         | difference | p-value |
 |-----------------|------------|---------|
 | verified        | 0.53468    | 0.00000 |
 | sentiment_score | 0.95686    | 0.00005 |
 | #URLs           | -0.74095   | 0.00005 |
+More details can be found [here](https://github.com/NGO-Algorithm-Audit/Bias_scan/blob/master/HBAC_scan/HBAC_BERT_disinformation_classifier.ipynb). 
 
 #### Conclusion
 Tweets of users with a verified profile, above average sentiment score and below average number URLs used in their tweets are classified significantly more often as disinformation by the BERT-based classifier. Next, with the help of subject matter experts a qualitative assessment is needed to examine the measured quantitative disparities further.
@@ -57,15 +58,16 @@ Tweets of users with a verified profile, above average sentiment score and below
 
 ![image](./images/Bias_scan_XGBoost_loan_approval_classifier.png)
 
-Statistical significant feature differences between cluster with most negative bias (cluster 4, bias=-0.05) and rest of dataset. More details can be found [here](https://github.com/NGO-Algorithm-Audit/Bias_scan/blob/master/HBAC_scan/HBAC_loan_approval_classifier.ipynb). 
-| feature             | difference | p-value |
-|---------------------|------------|---------|
-| real estate         | -0.69458   | 0.00000 |
-| radio/television    | -0.68364   | 0.00000 |
-| negative balance    | -0.65643   | 0.00000 |
-| new car             | -0.56446   | 0.00000 |
-| unskilled           | -0.53726   | 0.00000 |
-| unknown/no property | -0.42471   | 0.00000 |
+Statistical significant differences in features between cluster with most negative bias (cluster 4, bias=-0.05) and rest of dataset. Note that the identified negative bias is not that much (-0.05, on a scale between [-1,1]). For sake of completeness differences in features are provided and statistically tested: 
+| feature                                   | difference | p-value |
+|-------------------------------------------|------------|---------|
+| telephone registered                      | -1.33051   | 0.00000 |
+| unknown/no property                       | -0.68001   | 0.00000 |
+| self-employed/highly qualified employee   | -0.65643   | 0.00000 |
+| free housing                              | -0.58238   | 0.00000 |
+| credit amount                             | -0.56406   | 0.00000 |
+
+More details can be found [here](https://github.com/NGO-Algorithm-Audit/Bias_scan/blob/master/HBAC_scan/HBAC_loan_approval_classifier.ipynb). 
 
 #### Conclusion
 This means that loan applicants without real estate or unknown/no property, negative balance, unskilled job status, or those who want to use a loan to buy a new car or radio/television are significantly less often approved by the XGBoost classifier. Next, with the help of subject matter experts a qualitative assessment is needed to examine the measured quantitative disparities further.

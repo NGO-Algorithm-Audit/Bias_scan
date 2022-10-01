@@ -43,7 +43,7 @@ A .csv file of max. 10mb, with columns structured as follows: features, predicte
 ### Case study 1 – BERT-based disinformation classifier (Twitter data set)
 ![image](./images/Bias_scan_BERT_disinfo_classifier.png)
 
-Statistical significant feature differences between cluster with most negative bias (cluster 4) and rest of dataset. More details can be found [here](https://github.com/NGO-Algorithm-Audit/Bias_scan/blob/master/HBAC_scan/HBAC_BERT_disinformation_classifier.ipynb). 
+Statistical significant feature differences between cluster with most negative bias (cluster 4, bias=-0.27) and rest of dataset. More details can be found [here](https://github.com/NGO-Algorithm-Audit/Bias_scan/blob/master/HBAC_scan/HBAC_BERT_disinformation_classifier.ipynb). 
 | feature         | difference | p-value |
 |-----------------|------------|---------|
 | verified        | 0.53468    | 0.00000 |
@@ -51,13 +51,13 @@ Statistical significant feature differences between cluster with most negative b
 | #URLs           | -0.74095   | 0.00005 |
 
 #### Conclusion
-Tweets of users with a verified profile, below average number of mentions and URLs, and above average sentiment score are classified significantly more often as disinformation by the BERT-based classifier. Next, with the help of subject matter experts a qualitative assessment is needed to examine the measured quantitative disparities further.
+Tweets of users with a verified profile, above average sentiment score and below average number URLs used in their tweets are classified significantly more often as disinformation by the BERT-based classifier. Next, with the help of subject matter experts a qualitative assessment is needed to examine the measured quantitative disparities further.
 
 ### Case study 2 – XGBoost loan  approval classifier (German Credit data set)
 
 ![image](./images/Bias_scan_XGBoost_loan_approval_classifier.png)
 
-Statistical significant feature differences between cluster with most negative bias (cluster 3) and rest of dataset. More details can be found [here](https://github.com/NGO-Algorithm-Audit/Bias_scan/blob/master/HBAC_scan/HBAC_loan_approval_classifier.ipynb). 
+Statistical significant feature differences between cluster with most negative bias (cluster 4, bias=-0.05) and rest of dataset. More details can be found [here](https://github.com/NGO-Algorithm-Audit/Bias_scan/blob/master/HBAC_scan/HBAC_loan_approval_classifier.ipynb). 
 | feature             | difference | p-value |
 |---------------------|------------|---------|
 | real estate         | -0.69458   | 0.00000 |

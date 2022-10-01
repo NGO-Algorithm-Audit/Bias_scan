@@ -39,6 +39,8 @@ A .csv file of max. 10mb, with columns structured as follows: features, predicte
 | 30     | 3      | ... | 0.3    | 0          | 0           |
 
 ## Output – Cluster differences
+
+### Case study 1 – BERT-based tweet disinformation classifier
 ![image](./images/Bias_scan_BERT_disinfo_classifier.png)
 
 Statistical significant feature differences between cluster with most negative bias (cluster 5) and rest of dataset. More details can be found [here](https://github.com/NGO-Algorithm-Audit/Bias_scan/blob/master/HBAC_scan/HBAC_BERT_disinformation_classifier.ipynb). 
@@ -51,6 +53,8 @@ Statistical significant feature differences between cluster with most negative b
 
 #### Conclusion
 Tweets of users with a verified profile, below average number of mentions and URLs, and above average sentiment score are classified significantly more often as disinformation by the BERT-based classifier. Next, with help of subject matter experts the identified quantitative disparities need to be reviewed to assess potential discriminatory bias of the classifier.
+
+### Case study 2 – XGBoost loan  approval classifier
 
 ![image](./images/Bias_scan_XGBoost_loan_approval_classifier.png)
 

@@ -43,7 +43,7 @@ A .csv file of max. 10mb, with columns structured as follows: features, predicte
 ### Case study 1 – BERT-based disinformation classifier (Twitter data set)
 ![image](./images/Bias_scan_BERT_disinfo_classifier.png)
 
-Statistical significant feature differences between cluster with most negative bias (cluster 5) and rest of dataset. More details can be found [here](https://github.com/NGO-Algorithm-Audit/Bias_scan/blob/master/HBAC_scan/HBAC_BERT_disinformation_classifier.ipynb). 
+Statistical significant feature differences between cluster with most negative bias (cluster 4) and rest of dataset. More details can be found [here](https://github.com/NGO-Algorithm-Audit/Bias_scan/blob/master/HBAC_scan/HBAC_BERT_disinformation_classifier.ipynb). 
 | feature         | difference | p-value |
 |-----------------|------------|---------|
 | verified        | 0.53468    | 0.00000 |

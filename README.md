@@ -49,7 +49,8 @@ Statistical significant differences in features between cluster with most negati
 | verified        | 0.53468    | 0.00000 |
 | sentiment_score | 0.95686    | 0.00005 |
 | #URLs           | -0.74095   | 0.00005 |
-More details can be found [here](https://github.com/NGO-Algorithm-Audit/Bias_scan/blob/master/HBAC_scan/HBAC_BERT_disinformation_classifier.ipynb). 
+
+More details on this case study can be found [here](https://github.com/NGO-Algorithm-Audit/Bias_scan/blob/master/HBAC_scan/HBAC_BERT_disinformation_classifier.ipynb). 
 
 #### Conclusion
 Tweets of users with a verified profile, above average sentiment score and below average number URLs used in their tweets are classified significantly more often as disinformation by the BERT-based classifier. Next, with the help of subject matter experts a qualitative assessment is needed to examine the measured quantitative disparities further.
@@ -67,7 +68,7 @@ Statistical significant differences in features between cluster with most negati
 | free housing                              | -0.58238   | 0.00000 |
 | credit amount                             | -0.56406   | 0.00000 |
 
-More details can be found [here](https://github.com/NGO-Algorithm-Audit/Bias_scan/blob/master/HBAC_scan/HBAC_loan_approval_classifier.ipynb). 
+More details on this case study can be found [here](https://github.com/NGO-Algorithm-Audit/Bias_scan/blob/master/HBAC_scan/HBAC_loan_approval_classifier.ipynb). 
 
 #### Conclusion
 This means that loan applicants without real estate or unknown/no property, negative balance, unskilled job status, or those who want to use a loan to buy a new car or radio/television are significantly less often approved by the XGBoost classifier. Next, with the help of subject matter experts a qualitative assessment is needed to examine the measured quantitative disparities further.

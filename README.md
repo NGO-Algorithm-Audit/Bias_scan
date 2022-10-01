@@ -2,13 +2,13 @@
 
 ☁️ Implemented as an AWS web application, available on: https://www.algorithmaudit.eu/bias_scan/. 
 
-📄 Details on legal background, statistical methods and use cases: [bias scan tool report](https://github.com/NGO-Algorithm-Audit/AI_Audit_Challenge/blob/master/Bias_scan_tool_report.docx).
+📄 Details on legal background, statistical methods and case studies: [bias scan tool report](https://github.com/NGO-Algorithm-Audit/AI_Audit_Challenge/blob/master/Bias_scan_tool_report.docx).
 
-## Why this bias scan?
+## Key takeaways – Why this bias scan?
 
 - No data needed on protected attributes of users (unsupervised bias detection); 
-- Model-agnostic (binary AI classifiers); 
-- Quantitative and qualitative approach to assess fair AI;
+- Model-agnostic (for binary AI classifiers); 
+- Connecting quantitative tools with qualitative methods to assess fair AI;
 - Developed open-source and not-for-profit.
 
 ## Executive summary
@@ -22,8 +22,21 @@ These observations do not establish prohibited *prima facie* discrimination. Rat
 
 \* <sub>The implemented bias scan tool is based on the k-means Hierarchical Bias-Aware Clustering (HBAC) method as described in Misztal-Radecka, Indurkya, *Information Processing and Management*. Bias-Aware Hierarchical Clustering for detecting the discriminated groups of users in recommendation systems (2021).</sub>
 
-## Solution
+## Solution overview
 ![image](./images/Quantitative_qualitatitive.png)
+
+## Input data
+A .csv file of max. 10mb, with columns structured as follows: features, predicted labels, truth labels. Only the order, not the naming, of the columns is of importance.
+
+- **Features**: unscaled numeric values, e.g., *feat_1, feat_2, ..., feat_n;*
+- **Predicted label**: 0 or 1;
+- **Truth label**: 0 or 1.
+
+| feat_1 | feat_2 | ... | feat_n | pred_label | truth_label |
+|--------|--------|-----|--------|------------|-------------|
+| 10     | 1      | ... | 0.1    | 1          | 1           |
+| 20     | 2      | ... | 0.2    | 1          | 0           |
+| 30     | 3      | ... | 0.3    | 0          | 0           |
 
 ## Results
 ![image](./images/Bias_scan_BERT_disinfo_classifier.png)

@@ -1,6 +1,6 @@
 # Fairness through discussion: A deliberative way forward
 
-☁️ Implemented as an AWS web application, available on: https://www.algorithmaudit.eu/bias_scan/. 
+☁️ The bias scan tool is available as an AWS web application: https://www.algorithmaudit.eu/bias_scan/. 
 
 📄 Methodology: [bias scan tool report](https://github.com/NGO-Algorithm-Audit/AI_Audit_Challenge/blob/master/Bias_scan_tool_report.docx).
 
@@ -8,7 +8,7 @@
 
 - No data needed on protected attributes of users (unsupervised bias detection); 
 - Model-agnostic (for binary AI classifiers); 
-- Connecting quantitative tools with qualitative methods to assess fair AI;
+- Connecting the quantitative and qualitative reasoning paradigm to assess fair AI;
 - Developed open-source and not-for-profit.
 
 ## Executive summary
@@ -16,7 +16,7 @@ Artificial intelligence (AI) is increasingly used to automate or support policy 
 
 To achieve this, we propose a scalable, model-agnostic, and open-source bias scan tool to identify potentially discriminated groups of similar users in AI binary classifiers. This bias scan tool does not require *a priori* information about existing disparities and sensitive attributes, and is therefore able to detect possible proxy discrimination, intersectional discrimination and other types of differentiation that evade non-discrimination law. The tool is available as a web application, available on the [website](https://www.algorithmaudit.eu/bias_scan/) of NGO Algorithm Audit, such that it can be used by a wide public.
 
-As demonstrated on a BERT-based Twitter disinformation detection model, the bias scan tool identifies statistically significant disinformation classification bias against users with an unverified profile and an above average number of mentions and hashtags used in tweets. On the German Credit data set, statistically significant loan approval bias is observed on the basis of applicants’ job status, telephone registration and the amount of credit requested. 
+As demonstrated on a BERT-based Twitter disinformation detection model, the bias scan tool identifies statistically significant disinformation classification bias against users with a verified profile, a below average number of mentions and URLs used in tweets, and above average sentiment scores. On the German Credit data set, statistically significant loan approval bias is observed on the basis of applicants’ job status, telephone registration and the amount of credit requested. 
 
 These observations do not establish prohibited *prima facie* discrimination. Rather, the identified disparities serve as a starting point to assess potential discrimination according to the context-sensitive legal doctrine, i.e., assessment of the legitimacy of the aim pursued and whether the means of achieving that aim are appropriate and necessary. For this qualitative assessment, we propose an expert-oriented deliberative method. Which allows policy makers, journalist, data subjects and other stakeholders to publicly review identified quantitative disparities against the requirements of non-discrimination law and ethics. In our two-pronged quantitative-qualitative solution, scalable statistical methods work in tandem with the normative capabilities of human subject matter experts to define fair AI on a case-by-case basis (see the solution overview Figure below). 
 
@@ -38,8 +38,18 @@ A .csv file of max. 10mb, with columns structured as follows: features, predicte
 | 20     | 2      | ... | 0.2    | 1          | 0           |
 | 30     | 3      | ... | 0.3    | 0          | 0           |
 
-## Output
+## Output – Cluster differences
 ![image](./images/Bias_scan_BERT_disinfo_classifier.png)
+
+| feature         | difference | p-value |
+|-----------------|------------|---------|
+| verified        | 0.53144    | 0.00000 |
+| #mentions       | -0.34755   | 0.00003 |
+| sentiment_score | 0.99642    | 0.00008 |
+| #URLs           | -0.74848   | 0.00015 |
+
+Tweets of users with a verified profile, below average number of mentions and URLs, and above average sentiment score are classified significantly more often as disinformation by the BERT-based classifier.
+
 ![image](./images/Bias_scan_XGBoost_loan_approval_classifier.png)
 
 ### Structure of this repository

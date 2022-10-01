@@ -2,7 +2,7 @@
 
 ☁️ The bias scan tool is available as an AWS web application: https://www.algorithmaudit.eu/bias_scan/. 
 
-📄 Methodology: [bias scan tool report](https://github.com/NGO-Algorithm-Audit/AI_Audit_Challenge/blob/master/Bias_scan_tool_report.docx).
+📄 Methodology: [bias scan report](https://github.com/NGO-Algorithm-Audit/AI_Audit_Challenge/blob/master/Bias_scan_tool_report.docx).
 
 ## Key takeaways – Why this bias scan?
 
@@ -40,7 +40,7 @@ A .csv file of max. 10mb, with columns structured as follows: features, predicte
 
 ## Output – Cluster differences
 
-### Case study 1 – BERT-based tweet disinformation classifier
+### Case study 1 – BERT-based disinformation classifier (Twitter data set)
 ![image](./images/Bias_scan_BERT_disinfo_classifier.png)
 
 Statistical significant feature differences between cluster with most negative bias (cluster 5) and rest of dataset. More details can be found [here](https://github.com/NGO-Algorithm-Audit/Bias_scan/blob/master/HBAC_scan/HBAC_BERT_disinformation_classifier.ipynb). 
@@ -52,11 +52,24 @@ Statistical significant feature differences between cluster with most negative b
 | #URLs           | -0.74848   | 0.00015 |
 
 #### Conclusion
-Tweets of users with a verified profile, below average number of mentions and URLs, and above average sentiment score are classified significantly more often as disinformation by the BERT-based classifier. Next, with help of subject matter experts the identified quantitative disparities need to be reviewed to assess potential discriminatory bias of the classifier.
+Tweets of users with a verified profile, below average number of mentions and URLs, and above average sentiment score are classified significantly more often as disinformation by the BERT-based classifier. Next, Qualitative assessment with the help of subject matter experts to verify the measured quantitaive disparities.
 
-### Case study 2 – XGBoost loan  approval classifier
+### Case study 2 – XGBoost loan  approval classifier (German Credit data set)
 
 ![image](./images/Bias_scan_XGBoost_loan_approval_classifier.png)
+
+Statistical significant feature differences between cluster with most negative bias (cluster 3) and rest of dataset. More details can be found [here](https://github.com/NGO-Algorithm-Audit/Bias_scan/blob/master/HBAC_scan/HBAC_loan_approval_classifier.ipynb). 
+| feature             | difference | p-value |
+|---------------------|------------|---------|
+| real estate         | -0.69458   | 0.00000 |
+| radio/television    | -0.68364   | 0.00000 |
+| negative balance    | -0.65643   | 0.00000 |
+| new car             | -0.56446   | 0.00000 |
+| unskilled           | -0.53726   | 0.00000 |
+| unknown/no property | -0.42471   | 0.00000 |
+
+#### Conclusion
+This means that loan applicants without real estate or unknown/no property, negative balance, unskilled job status, or those who want to use a loan to buy a new car or radio/television are significantly less often approved by the XGBoost classifier. Next, Qualitative assessment with the help of subject matter experts to verify the measured quantitaive disparities.
 
 ### Structure of this repository
 ```

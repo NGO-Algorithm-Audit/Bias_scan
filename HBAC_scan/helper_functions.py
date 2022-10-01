@@ -8,88 +8,40 @@ from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 
-def initialize_dataset(raw_data, features, with_errors=True, just_features=True, scale_features=True, with_classes=True):
-    """ Initializing dataset to scale features. Errors can also be scaled, which can be included or excluded for clustering. 
-    It returns a scaled dataset with new columns "clusters" = 0 and "new_clusters" = -1, which are required for HBAC """
+def init_GermanCredit_dataset(raw_data, features, with_errors=True, just_features=True, scale_features=True, with_classes=True):
+    """ Initializing dataset: scaling features, adding new columns which are required for HBAC """
 
     new_data = raw_data.copy(deep=True)
 
-    if with_errors:
-        scaling_factor = 1 #needs to be converted to scaling range [0.2 - 1.2]
-        new_data['scaled_errors'] = new_data['errors'] * scaling_factor
-
-    if just_features:
-        new_data = new_data.drop(['text','predicted_class', 'true_class', 'errors'], axis=1)
-
-    if scale_features:
-        to_scale = raw_data.drop(['text','predicted_class', 'true_class', 'errors'], axis=1).columns
-        new_data[to_scale] = StandardScaler().fit_transform(features[to_scale])
-    
-    if with_classes:
-        for col in ['predicted_class', 'true_class', 'errors']:
-            new_data[col] = raw_data[col]
+    to_scale = new_data.drop(['predicted_class', 'true_class', 'errors'], axis=1).columns
+    new_data[to_scale] = StandardScaler().fit_transform(features[to_scale])
 
     new_data['clusters'] = 0
     new_data['new_clusters'] = -1
     return new_data
 
-def initialize_GermanCredit_dataset(raw_data, features, with_errors=True, just_features=True, scale_features=True, with_classes=True):
-    """ Initialisation of the dataset. Scales all the features and can also scale the errors, which can be included or excluded for clustering 
-    It returns a scaled dataset with new columns "clusters" = 0 and "new_clusters" = -1, which are required for HBAC """
+def init_dataset(raw_data, features):
+    """ Initializing dataset: scaling features, adding new columns which are required for HBAC """
 
     new_data = raw_data.copy(deep=True)
 
-    if with_errors:
-        scaling_factor = 1 #needs to be converted to scaling range [0.2 - 1.2]
-        new_data['scaled_errors'] = new_data['errors'] * scaling_factor
-
-    if just_features:
-        new_data = new_data.drop(['predicted_class', 'true_class', 'errors'], axis=1)
-
-    if scale_features:
-        to_scale = raw_data.drop(['predicted_class', 'true_class', 'errors'], axis=1).columns
-        new_data[to_scale] = StandardScaler().fit_transform(features[to_scale])
-    
-    if with_classes:
-        for col in ['predicted_class', 'true_class', 'errors']:
-            new_data[col] = raw_data[col]
+    to_scale = new_data.drop(['text','predicted_class', 'true_class', 'errors'], axis=1).columns
+    new_data[to_scale] = StandardScaler().fit_transform(features[to_scale])
+    new_data = new_data.drop(['text'], axis=1)
 
     new_data['clusters'] = 0
     new_data['new_clusters'] = -1
     return new_data
-
-def pca_plot(data):
-    """ Function to perform dimensionality reduction on the features, so that we can create 2-dimensional scatterplots.
-    Takes as input the entire dataset, selects the features on which we want to cluster, and stores them in a temporary pd Dataframe. 
-    This df is used to create a seaborn scatterplot. """
-    
-    pca_features = data.drop(['scaled_errors', 'predicted_class', 'true_class', 'errors', 'clusters', 'new_clusters'], axis=1)
-    other_features = data[['scaled_errors', 'predicted_class', 'true_class', 'errors', 'clusters', 'new_clusters']]
-    
-    df = pd.DataFrame(pca_features)
-    pca = pd.DataFrame(PCA(n_components=2).fit_transform(df), index=df.index)
-    temp_dataset = pca.join(other_features, how='left')
-    temp_dataset.rename( columns={0 :'PCA - 1st'}, inplace=True )
-    temp_dataset.rename( columns={1 :'PCA - 2nd'}, inplace=True )
-
-    scatterplot = sns.scatterplot(data=temp_dataset, x='PCA - 1st', y='PCA - 2nd', hue="clusters", size='errors', sizes=(150, 30), palette="Set1")
-    scatterplot.set_title('HBAC bias scan (k-means) on AI classifier')
-    lgd = scatterplot.legend(loc='center left', bbox_to_anchor=(1.0, 0.5), ncol=1)
-    plt.show()
-#     plt.savefig('./test.png', bbox_extra_artists=(lgd,), bbox_inches='tight')
     
 def accuracy(results):
-    ''' This function calculates the accuracy of a DF dataframe
-    It requires a df.column named "errors" '''
-    if len(results) == 0:
-        print("You are calculating the accuracy on a empty cluster") 
+    ''' Accuracy of dataframe '''
+    
     correct = results.loc[results['errors'] == 0]
     acc = len(correct)/len(results)
     return acc
 
 def bias_acc(data, cluster_id, cluster_col):
-    ''' This function calculates the negative bias, which is the accuracy of the selected cluster - the accuracy of the remaining clusters 
-    Cluster col: the name of the DF column where the cluster assignments are '''
+    ''' Negative bias := accuracy of the selected cluster - accuracy of the remaining clusters '''
     cluster_x = data.loc[data[cluster_col] == cluster_id]
     if len(cluster_x) ==0:
         print("This is an empty cluster! cluster ", cluster_id)
@@ -99,13 +51,10 @@ def bias_acc(data, cluster_id, cluster_col):
     return accuracy(cluster_x) - accuracy(remaining_clusters)
 
 def get_max_negative_bias(fulldata, function=bias_acc):
-    ''' This function returns the highest negative bias of the newly introduced clusters 
-    fulldata (DataFrame) should include a column new_clusters  --> used for identifying underperformed clusters '''
+    ''' Calculates the highest negative bias of the newly introduced clusters '''
     max_abs_bias = -999999
     for cluster_number in fulldata['new_clusters'].unique():
-        if cluster_number == -1: #Outliers in DBScan
-            continue
-        current_bias = (function(fulldata, cluster_number, "new_clusters")) # abs function
+        current_bias = (function(fulldata, cluster_number, "new_clusters"))
         if current_bias < max_abs_bias:
             print('current bias: ', current_bias)
             print('max abs bias: ', max_abs_bias)
@@ -113,14 +62,11 @@ def get_max_negative_bias(fulldata, function=bias_acc):
     return max_abs_bias
 
 def get_max_bias_cluster(fulldata, function=bias_acc):
-    ''' This function returns the cluster linked to the highest negative bias of the newly introduced clusters 
-    fulldata (DataFrame) should include a column new_clusters '''
+    ''' Identifies cluster linked to the highest negative bias of the newly introduced clusters '''
     max_abs_bias = 100
     best_cluster = -2
     for cluster_number in fulldata['clusters'].unique():
-        if cluster_number == -1: # Outliers in DBScan, which are excluded
-            continue
-        current_bias = (function(fulldata, cluster_number, "clusters")) # abs function to find the highest bias
+        current_bias = (function(fulldata, cluster_number, "clusters"))
         print(f"{cluster_number} has bias {current_bias}")
         if current_bias < max_abs_bias:
             max_abs_bias = current_bias
@@ -128,7 +74,7 @@ def get_max_bias_cluster(fulldata, function=bias_acc):
     return best_cluster
 
 def get_min_cluster_size(data):
-    ''' Returns the size of the smallest new cluster '''
+    ''' Size of smallest new cluster '''
     min_cluster_size = len(data)
     for i in data['new_clusters'].unique():
         # exclude the cluster -1 from being seen as a cluster, since it contains outliers
@@ -140,9 +86,8 @@ def get_min_cluster_size(data):
     return min_cluster_size
 
 def get_next_cluster(data):
-    ''' This function returns the cluster number with the highest variance. The variance is calculated based on the errors of each cluster.
-    The cluster with the highest variance will be selected as splitting cluster
-    The function requires df.columns named "clusters" and "errors '''
+    ''' Identifies cluster number with the highest variance. The variance is calculated based on the errors of each cluster.
+    The cluster with the highest variance will be selected as splitting cluster '''
     n_cluster = max(data['clusters'])
     highest_variance = -1
     cluster_number = 0
@@ -160,19 +105,36 @@ def get_next_cluster(data):
     return cluster_number
 
 def calculate_variance(data):
-    ''' This function calculates the variance for a DF. It requires a df.column named "clusters" and it uses the bias_acc_towards_global_avg '''
+    ''' Determines variance for a dataframe. '''
     variance_list_local = []
     for j in data['clusters'].unique():
         average_accuracy = accuracy(data)
         neg_bias_clus = bias_acc(data, j, 'clusters') 
-        variance_list_local.append(neg_bias_clus) #variance_list was "neg_bias_list" before
-    variance = np.var(variance_list_local) #this was "neg_bias_list"
+        variance_list_local.append(neg_bias_clus) 
+    variance = np.var(variance_list_local)
     return variance
 
 def get_random_cluster(clusters):
-    ''' This function returns the value of a random cluster
-    clusters df.Column the column clusters '''
+    ''' Identifies value of a random cluster '''
     result = -1
     while (result == -1):
         result = random.randint(0, len(clusters.unique()))
     return result
+
+def pca_plot(data):
+    """ PCA dimensionality reduction to display identified clusters as scatterplot. """
+    
+    pca_features = data.drop(['predicted_class', 'true_class', 'errors', 'clusters', 'new_clusters'], axis=1)
+    other_features = data[['predicted_class', 'true_class', 'errors', 'clusters', 'new_clusters']]
+    
+    df = pd.DataFrame(pca_features)
+    pca = pd.DataFrame(PCA(n_components=2).fit_transform(df), index=df.index)
+    temp_dataset = pca.join(other_features, how='left')
+    temp_dataset.rename( columns={0 :'PCA - 1st'}, inplace=True )
+    temp_dataset.rename( columns={1 :'PCA - 2nd'}, inplace=True )
+
+    scatterplot = sns.scatterplot(data=temp_dataset, x='PCA - 1st', y='PCA - 2nd', hue="clusters", size='errors', sizes=(150, 30), palette="Set1")
+    scatterplot.set_title('HBAC bias scan (k-means) on AI classifier')
+    lgd = scatterplot.legend(loc='center left', bbox_to_anchor=(1.0, 0.5), ncol=1)
+    plt.show()
+#     plt.savefig('./test.png', bbox_extra_artists=(lgd,), bbox_inches='tight')

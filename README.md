@@ -2,7 +2,7 @@
 
 ☁️ This bias scan tool is available as an AWS web application: https://www.algorithmaudit.eu/bias_scan/. 
 
-📄 Methodology: [bias scan report](https://github.com/NGO-Algorithm-Audit/AI_Audit_Challenge/blob/master/Bias_scan_tool_report.docx).
+📄 Methodology: [bias scan report](https://github.com/NGO-Algorithm-Audit/Bias_scan/blob/master/Bias_scan_tool_report.pdf).
 
 ## Key takeaways – Why this bias scan?
 

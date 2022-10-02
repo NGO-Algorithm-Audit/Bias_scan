@@ -1,6 +1,6 @@
 # Fairness through discussion: A deliberative way forward
 
-☁️ The bias scan tool is available as an AWS web application: https://www.algorithmaudit.eu/bias_scan/. 
+☁️ This bias scan tool is available as an AWS web application: https://www.algorithmaudit.eu/bias_scan/. 
 
 📄 Methodology: [bias scan report](https://github.com/NGO-Algorithm-Audit/AI_Audit_Challenge/blob/master/Bias_scan_tool_report.docx).
 
@@ -12,9 +12,9 @@
 - Developed open-source and not-for-profit.
 
 ## Executive summary
-Artificial intelligence (AI) is increasingly used to automate or support policy decisions that affects individuals and groups. It is imperative that AI adheres to the legal and ethical requirements that apply to such policy decisions. In particular, policy decisions should not be systematically discriminatory (direct or indirect) with respect to protected attributes such as gender, sex, etnicity or race.
+Artificial intelligence (AI) is increasingly used to automate or support policy decisions that affects individuals and groups. It is imperative that AI adheres to the legal and ethical requirements that apply to such policy decisions. In particular, policy decisions should not be systematically discriminatory (direct or indirect) with respect to protected attributes such as gender, sex, ethnicity or race.
 
-To achieve this, we propose a scalable, model-agnostic, and open-source bias scan tool to identify potentially discriminated groups of similar users in AI binary classifiers. This bias scan tool does not require *a priori* information about existing disparities and sensitive attributes, and is therefore able to detect possible proxy discrimination, intersectional discrimination and other types of differentiation that evade non-discrimination law. The tool is available as a web application, available on the [website](https://www.algorithmaudit.eu/bias_scan/) of NGO Algorithm Audit, such that it can be used by a wide public.
+To achieve this, we propose a scalable, model-agnostic, and open-source bias scan tool to identify potentially discriminated groups of similar users in binary AI classifiers. This bias scan tool does not require *a priori* information about existing disparities and protected attributes, and is therefore able to detect possible proxy discrimination, intersectional discrimination and other types of differentiation that evade non-discrimination law. The tool is available as a web application, available on the [website](https://www.algorithmaudit.eu/bias_scan/) of NGO Algorithm Audit, such that it can be used by a wide public.
 
 As demonstrated on a BERT-based Twitter disinformation detection model, the bias scan tool identifies statistically significant disinformation classification bias against users with a verified profile, tweets with an above average sentiment score and below average number URLs used in their messages. On the German Credit data set, the magnitude of negative bias for the most disadvantages cluster is limited. Though, statistically significant loan approval bias is observed on the basis of telephone registration, applicants' property ownership, job status and requested credit amount.
 
@@ -53,7 +53,7 @@ Statistical significant differences in features between cluster with most negati
 More details on this case study can be found [here](https://github.com/NGO-Algorithm-Audit/Bias_scan/blob/master/HBAC_scan/HBAC_BERT_disinformation_classifier.ipynb). 
 
 #### Conclusion
-Tweets of users with a verified profile, above average sentiment score and below average number URLs used in their tweets are classified significantly more often as disinformation by the BERT-based classifier. Next, with the help of subject matter experts a qualitative assessment is needed to examine the measured quantitative disparities further.
+Tweets of users with a verified profile, above average sentiment score and below average number of URLs used in their tweets are classified significantly more often as disinformation by the BERT-based classifier. Next, with the help of subject matter experts a qualitative assessment is needed to examine the measured quantitative disparities further.
 
 ### Case study 2 – XGBoost loan  approval classifier (German Credit data set)
 

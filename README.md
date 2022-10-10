@@ -96,5 +96,5 @@ This means that loan applicants without real estate or unknown/no property, nega
 - dr. Vahid Niamadpour, PhD-candidate in Linguistics at Leiden University
 - Floris Holstege, PhD-candidate in Explanable Machine Learning at University of Amsterdam.
 
-## This projectn is endores by:
+## This project is endorsed by:
 - Gabriel Geiger, Investigative Reporter Algorithms and Automated Decision-Making at Lighthouse Reports.

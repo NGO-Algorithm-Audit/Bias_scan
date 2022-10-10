@@ -89,9 +89,12 @@ This means that loan applicants without real estate or unknown/no property, nega
     
 ```
 
-## Contributors to this project
+## Contributors to this project:
 - Jurriaan Parie, Trustworthy AI data scientist at IBM;
 - Ariën Voogt, PhD-candidate in Philosophy at Protestant Theological University of Amsterdam;
 - Joel Persson, PhD-candidate in Applied Data Science at ETH Zürich;
 - dr. Vahid Niamadpour, PhD-candidate in Linguistics at Leiden University
 - Floris Holstege, PhD-candidate in Explanable Machine Learning at University of Amsterdam.
+
+## This projectn is endores by:
+- Gabriel Geiger, Investigative Reporter Algorithms and Automated Decision-Making at Lighthouse Reports.

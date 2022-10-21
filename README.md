@@ -99,4 +99,5 @@ This means that loan applicants without real estate or unknown/no property, nega
 ## This project is endorsed by:
 - Gabriel Geiger, Investigative Reporter Algorithms and Automated Decision-Making at Lighthouse Reports;
 - Marlies van Eck, Assistant Professor at Radboud University;
-- Laurens van der Maas, Data Scientist at AWS.
+- Laurens van der Maas, Data Scientist at AWS
+- Simone Maria Parazzoli.
